@@ -45,6 +45,11 @@ public class EvrLogger {
         print(" \(type.getChar()) \(type.getName()) \(type.getChar()) \(EvrLogger.getFileName(file)).\(function) -> \(message)")
     }
     
+    public class func e(file: String = #file, line: Int = #line, function: String = #function, _ message: String) {
+           let type = LogType.error
+           print(" \(type.getChar()) \(type.getName()) \(type.getChar()) \(EvrLogger.getFileName(file)).\(function) -> \(message)")
+       }
+    
     public class func debug(file: String = #file, line: Int = #line, function: String = #function) -> String {
         return "\(file):\(line) : \(function)"
     }
